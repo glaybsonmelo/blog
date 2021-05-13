@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load humanize %}
+{% load glfilters %}
 
 <!-- CONTENT -->
 {% block conteudo %}
@@ -26,7 +27,7 @@
                         <small class="text-muted">
                             {{ post.date_post|naturalday|title }}
                             |
-                            {{ post.comments_number }} comentário(s)
+                            {{post.comments_number | plural_comentarios}}
                             |
                              {{ post.category_post }}</small>
                     </p>
