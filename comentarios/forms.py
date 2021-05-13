@@ -15,6 +15,11 @@ class FormComment(ModelForm):
                 'comment_name',
                 'Nome precisa ter 5 caracteres ou mais.'
             )
+        if not comentarios:
+            self.add_error(
+                'comment',
+                'Comentario vazio.'
+            )
     class Meta:
         model = Comment
         fields = ('comment_name', 'email_comment', 'comment')
